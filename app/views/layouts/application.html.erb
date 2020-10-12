@@ -10,6 +10,23 @@
   </head>
 
   <body>
+    <header>
+     <nav>
+       <ul class="nav-list">
+         <li class="nav-list-item"><%= link_to "Home", root_path %></li>
+         <li class="nav-list-item">About</li>
+         <li class="nav-list-item">Users</li>
+         <li class="nav-list-item">Tweetes</li>
+         <li class="nav-list-item">Log In</li>
+         <li class="nav-list-item">Sign Up</li>
+       </ul>
+     </nav>
+    </header>
     <%= yield %>
+    <footer>
+      <div class="footer-text">
+        ©️TweetApp.inc
+      </div>
+    </footer>
   </body>
 </html>
