@@ -1,0 +1,27 @@
+<main>
+<h2>Sign Up</h2>
+
+<%= form_with model: @user, url: user_registration_path, id: 'new_user',class: 'new_user', local: true do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field">
+    <label class="control-label sr-only" for="inputName">Name</label><br/>
+    <%= f.text_field :name, autofocus: true, class:"form-control", id:"inputName" %>
+  </div>
+  <div class="field">
+ <label class="control-label sr-only" for="inputEmail">Email</label><br/>
+  <%= f.email_field :email, autofocus: true, class:"form-control", id:"inputEmail"  %>
+ </div>
+  <div class="field">
+    <label class="control-label sr-only" for="inputPassword">password</label><br/>
+    <%= f.password_field :password, autocomplete: "off", class:"form-comtrol", id:"inputPassword" %>
+  </div>
+  <div class="field">
+    <label class="control-label sr-only" for="inputConfirmPassword">Password</label><br/>
+    <%= f.password_field :password_confirmation, autocomplete: "off", class:"form-control", id:"inputConfirmPassword" %>
+  </div>
+    <%= f.submit "Sign Up" %>
+  </div>
+<% end %>
+</div>
+</main>

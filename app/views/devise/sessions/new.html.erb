@@ -1,0 +1,18 @@
+<main>
+<h2>Log In</h2>
+
+<%= form_with model:@user, url: session_path(resource_name), local: true do |f| %>
+  <div class="field">
+    <label class="control-label sr-only" for="inputName">Name</label><br />
+    <%= f.text_field :name, autofocus: true, class:"form-control", id:"inputName" %>
+  </div>
+
+  <div class="field">
+    <label class="control-label sr-only" for="inputPassword">Password</label><br />
+    <%= f.password_field :password, autocomplete: "off", class:"form-control", id:"inputPassword" %>
+  </div>
+
+    <%= f.submit "Log in" %>
+  </div>
+<% end %>
+</main>
