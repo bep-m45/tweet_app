@@ -4,8 +4,12 @@
     <h1>Tweet App</h1>
     </div>
     <div class="top-sign">
-   <%= link_to "Sign in", new_user_session_path %>
-   <%= link_to "Sign Up",  new_user_registration_path %>
+       <% if user_signed_in? %>
+       <span><%= link_to "Tweetes",  posts_path %></span>
+       <% else %>
+   <span><%= link_to "Sign in", new_user_session_path %></span>
+   <span><%= link_to "Sign Up",  new_user_registration_path %></span>
+   <% end %>
     </div>
   </div>
 </main>

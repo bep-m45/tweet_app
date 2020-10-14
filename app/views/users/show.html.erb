@@ -1,0 +1,45 @@
+<main>
+  <h2>User</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th><%= @user.name %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+      <td><%= attachment_image_tag @user, :user_image, :fill, 200, 200, format: 'jpeg', class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg" %></td>
+      </tr>
+      <tr>
+        <td><%= @user.profile_comment %></td>
+      </tr>
+      <tr>
+        <td>
+          <% if @user == current_user %>
+          <%= link_to 'Edit', edit_user_path(@user.id) %>
+          <% end %>
+          </td>
+      </tr>
+    </tbody>
+  </table>
+
+<h2>User's Tweet</h2>
+   <% @posts.each do |post| %>
+  <table>
+    <thead>
+      <tr>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= attachment_image_tag(post, :image, :fill, 200, 200, format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "no_image.jpg") %> </td>
+      </tr>
+      <tr>
+        <td><%= post.tweet %></td>
+     </tr>
+      </tbody>
+    </table>
+    <% end %>
+</main>

@@ -44,11 +44,12 @@ color: #ffffff;
 footer {
    width: 100%;
   height: 70px; 
+  background-color:  #4dffe1;
 }
 
 .footer-text {
   text-align: right;
   line-height: 70px;
   padding-right: 20px;
-  color: #4dffe1;
+  color: #ffffff;
 }

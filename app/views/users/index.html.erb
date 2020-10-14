@@ -1,0 +1,21 @@
+<main>
+  <h2>Users</h2>
+
+  <% @users.each do |user| %>
+  <table>
+    <thead>
+      <tr>
+        <th><%= user.name %></th>
+      </tr>
+      </thead>
+    <tbody>
+      <tr>
+        <td><%= link_to attachment_image_tag(user, :user_image, :fill, 200, 200, format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "no_image.jpg"), user_path(user.id) %> </td>
+      </tr>
+      <tr>
+        <td><%= user.profile_comment %></td>
+      </tr>
+      </tbody>
+      </table>
+    <% end %>
+</main>

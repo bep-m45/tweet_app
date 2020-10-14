@@ -1,0 +1,28 @@
+<main>
+  <h2>Tweetes</h2>
+
+  <table>
+     <% @posts.each do |post| %>
+    <thead>
+      <tr>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+       <tr>
+        <td></td>
+      </tr>
+      <tr>
+        <td><%= attachment_image_tag(post, :image, :fill, 200, 200, format: 'jpeg', class: "img-circle pull-left profile-img") %></td>
+      </tr>
+      <tr>
+        <td><%= post.tweet %></td>
+      </tr>
+      <tr>
+        <td><%=link_to 'Show', post_path(post.id) %></td>
+      </tr>
+    </tbody>
+    <% end %>
+  </table>
+  
+</main>
