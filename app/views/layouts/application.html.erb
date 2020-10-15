@@ -7,6 +7,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
   </head>
 
   <body>
@@ -14,19 +15,19 @@
      <nav>
        <ul class="nav-list">
          <% if user_signed_in? %>
-         <li class="nav-list-item"><%= link_to "Home", root_path %></li>
-         <li class="nav-list-item">About</li>
-          <li class="nav-list-item"><%= link_to "Tweetes", posts_path %></li>
-         <li class="nav-list-item"><%= link_to "Users", users_path %></li>
-         <li class="nav-list-item"><%= link_to "New Tweet", new_post_path %></li>
-         <li class="nav-list-item"><%= link_to "logout", destroy_user_session_path, method: :delete %></li>
+         <li class="nav-list-item"><a class="kaba" href ="/posts/new"><i class="fas fa-hippo" style="#ffffff"></i></a></li>
+         <li class="nav-list-item"><i class="fas fa-home" aria-hidden="true" style ="#ffff00"></i><%= link_to "Home", root_path %></li>
+         <li class="nav-list-item"><i class="fas fa-star" style="#ffffff"></i>About</li>
+          <li class="nav-list-item"><i class="fas fa-feather-alt" style="#ffffff"></i><%= link_to "Tweetes", posts_path %></li>
+         <li class="nav-list-item"><i class="fas fa-users" style="ffffff"></i><%= link_to "Users", users_path %></li>
+         <li class="nav-list-item"><i class="fas fa-sign-out-alt" style="#ffffff"></i><%= link_to "logout", destroy_user_session_path, method: :delete %></li>
          <% else %>
-          <li class="nav-list-item"><%= link_to "Home", root_path %></li>
-           <li class="nav-list-item">About</li>
-            <li class="nav-list-item"><%= link_to "Tweetes", posts_path %></li>
-             <li class="nav-list-item"><%= link_to "Users", users_path %></li>
+          <li class="nav-list-item"><i class="fas fa-home" aria-hidden="true" style="#ffffff"></i><%= link_to "Home", root_path %></li>
+           <li class="nav-list-item"><i class="fas fa-star" style="#ffffff"></i>About</li>
+            <li class="nav-list-item"><i class="fas fa-feather-alt" style="#ffffff"></i><%= link_to "Tweetes", posts_path %></li>
+             <li class="nav-list-item"><i class="fas fa-users" style="ffffff"></i><%= link_to "Users", users_path %></li>
          <% end %>
-         
+
        </ul>
      </nav>
     </header>

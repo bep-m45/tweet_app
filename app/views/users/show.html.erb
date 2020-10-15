@@ -1,4 +1,5 @@
 <main>
+  <!-- User -->
   <h2>User</h2>
 
   <table>
@@ -17,12 +18,14 @@
       <tr>
         <td>
           <% if @user == current_user %>
-          <%= link_to 'Edit', edit_user_path(@user.id) %>
+          <%= link_to '編集', edit_user_path(@user.id) %>
           <% end %>
           </td>
       </tr>
     </tbody>
   </table>
+
+<!-- User's Tweetes -->
 
 <h2>User's Tweet</h2>
    <% @posts.each do |post| %>

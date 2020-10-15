@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   root 'home#top'
   get 'home/about'
   resources :posts do
+    resource :favorites, only: [:create, :destroy]
     resources :post_comments, only: [:create, :destroy]
   end
   resources :users

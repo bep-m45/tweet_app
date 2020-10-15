@@ -1,28 +1,50 @@
 <main>
+  <!-- Tweetes -->
+
   <h2>Tweetes</h2>
 
+<% @posts.each do |post| %>
+  
+          <%= attachment_image_tag(@user, :user_image, :fill, 200, 200, format: 'jpeg', class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg") %>
+          <%#= @user.name %>
+ 
   <table>
-     <% @posts.each do |post| %>
     <thead>
       <tr>
         <th></th>
       </tr>
     </thead>
     <tbody>
-       <tr>
-        <td></td>
-      </tr>
       <tr>
         <td><%= attachment_image_tag(post, :image, :fill, 200, 200, format: 'jpeg', class: "img-circle pull-left profile-img") %></td>
       </tr>
       <tr>
         <td><%= post.tweet %></td>
       </tr>
-      <tr>
-        <td><%=link_to 'Show', post_path(post.id) %></td>
-      </tr>
     </tbody>
-    <% end %>
   </table>
-  
+
+  <ol>
+    
+     <% if @post.favorited_by?(current_user) %>
+          <li>
+            <%=link_to post_favorites_path(@post), method: :delete do %>
+            <i class="fa fa-heart" aria-hidden="true" style="color: red;" ></i>
+            <%= @post.favorites.count %>いいね
+          <% end %>
+          </li>
+          <% else %>
+          <li>
+              <%= link_to post_favorites_path(@post),method: :post do %>
+              <i class="far fa-heart" aria-hidden="true"></i>
+              <%= @post.favorites.count %>いいね
+         <% end %>
+          </li>
+         <% end %>
+    
+      <li>
+       コメント <%= link_to post.post_comments.count, post_path(post.id) %>件 </a>
+      </li>
+  </ol>
+  <% end %>
 </main>

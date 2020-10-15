@@ -22,8 +22,20 @@
 }
 
 span {
-  margin: 6px 10px;
+  margin: 10px 10px;
   padding: 6px 20px;
+  border-radius: 50px;
   border: solid 1px #4dffe1;
-  
+  background-color :rgba(0,153,255,0.2);
+}
+
+.kaba {
+  font-size: 50px;
+  color: #ffff00;
+}
+
+
+.big-kaba {
+  font-size: 70px;
+  color: #ffff00;
 }

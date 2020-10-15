@@ -14,20 +14,19 @@ before_action :authenticate_user!,  only: [:edit]
 
   def index
     @posts = Post.all
-   
-
-
+  
   end
 
   def show
     @post = Post.find(params[:id])
     @user = @post.user
+    @post_comment = PostComment.new
 
   end
 
   def edit
     @post = Post.find(params[:id])
-    if @book_user.id != current_usdr.id
+    if @post.user.id != current_user.id
       redirect_to posts_path
     end
   end
