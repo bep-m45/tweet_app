@@ -14,6 +14,7 @@ before_action :authenticate_user!,  only: [:edit]
 
   def index
     @posts = Post.all
+    
   
   end
 

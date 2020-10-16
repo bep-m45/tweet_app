@@ -1,15 +1,15 @@
-<main>
+
   <div class="top-main">
     <div class="top-heading">
-    <h1>Tweet App</h1>
+    <h1 class="top-heding-text">Tweet App</h1>
     </div>
     <div class="top-sign">
        <% if user_signed_in? %>
      <a href="/posts/new" class="big-kaba"><i class="fas fa-hippo" style="#ffff00"></i></a>
        <% else %>
-   <span><%= link_to "　　Sign in　　", new_user_session_path %></span>
-   <span><%= link_to "　　Sign Up　　",  new_user_registration_path %></span>
+   <span><i class="fas fa-sign-in-alt" style="#ffffff"></i><%= link_to "Sign in", new_user_session_path %></span>
+   <span><i class="far fa-user-circle" style="#ffffff"></i><%= link_to "Sign Up",  new_user_registration_path %></span>
    <% end %>
     </div>
-  </div>　　
-</main>
+  </div>
+

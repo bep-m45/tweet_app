@@ -1,50 +1,72 @@
+
 <main>
   <!-- Tweetes -->
 
-  <h2>Tweetes</h2>
+  <h2><i class="fas fa-feather-alt"></i>Tweetes</h2>
+
 
 <% @posts.each do |post| %>
-  
-          <%= attachment_image_tag(@user, :user_image, :fill, 200, 200, format: 'jpeg', class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg") %>
-          <%#= @user.name %>
- 
-  <table>
+<div class="main-container">
+  <div class="container">
+  <div class="row">
+    <div class="col-md-5">
+
+<%= attachment_image_tag(post, :image, :fill, 300, 300, format: 'jpeg')%>
+
+</div>
+<div class="col-md-7">
+ <div class="tweet-table">
+  <table class="table">
     <thead>
       <tr>
-        <th></th>
+         <th> 
+          <%= attachment_image_tag(post.user, :user_image, :fill, 50, 50, format: 'jpeg', class: "img-circle pull-left profile-img",fallback: "no_image.jpg") %>
+          <%= post.user.name %></li>
+         </th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td><%= attachment_image_tag(post, :image, :fill, 200, 200, format: 'jpeg', class: "img-circle pull-left profile-img") %></td>
-      </tr>
       <tr>
         <td><%= post.tweet %></td>
       </tr>
     </tbody>
   </table>
 
-  <ol>
-    
-     <% if @post.favorited_by?(current_user) %>
-          <li>
-            <%=link_to post_favorites_path(@post), method: :delete do %>
-            <i class="fa fa-heart" aria-hidden="true" style="color: red;" ></i>
-            <%= @post.favorites.count %>いいね
+  <ol class="tweet-list">
+     <li class="tweet-list-item">
+         <%= post.created_at.strftime('%Y/%m/%d/%T') %>
+      </li>
+      
+      <% if post.favorited_by?(current_user) %>
+          <li class="tweet-list-item">
+            <%=link_to post_favorites_path(post), method: :delete do %>
+            <i class="fa fa-heart" aria-hidden="true" style="color: red;"></i>
+            <%= post.favorites.count %>いいね
           <% end %>
           </li>
           <% else %>
-          <li>
-              <%= link_to post_favorites_path(@post),method: :post do %>
+          <li class="tweet-list-item">
+              <%= link_to post_favorites_path(post),method: :post do %>
               <i class="far fa-heart" aria-hidden="true"></i>
-              <%= @post.favorites.count %>いいね
+              <%= post.favorites.count %>いいね
          <% end %>
           </li>
          <% end %>
-    
-      <li>
-       コメント <%= link_to post.post_comments.count, post_path(post.id) %>件 </a>
+      <li class="tweet-list-item">
+        <i class="fas fa-comment"></i><a href="#comments"><%= post.post_comments.count %>件</a>
       </li>
+       <% if post.user == current_user %>
+      <li class="tweet-list-item"><%= link_to "編集", edit_post_path(post.id) %></li>
+      <li class="tweet-list-item"><%= link_to "削除", post_path(post.id), method: :delete %></li>
+       <% end %>
+      
   </ol>
+  </div>
+</div>
+</div>
+   </div>
   <% end %>
+  </div>
+
+  
 </main>

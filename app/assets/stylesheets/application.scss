@@ -21,6 +21,10 @@
   box-sizing: border_box;
 }
 
+body {
+  background-color:  #4dffe1;
+}
+
 header {
   width: 100%;
   height: 70px;
@@ -32,15 +36,16 @@ display: flex;
 justify-content: center;
 line-height: 70px;
 color: #ffffff;
+background-color: #4dffe1;
 }
 
 a {
-  color: #ffffff;
+
   text-decoration: none;
 }
 
-a:hover { color: #ffff00;
-}
+/*a:hover { color: #ffff00;
+}*/
 
 .nav-list-item {
   display: inline-block;
@@ -48,6 +53,44 @@ a:hover { color: #ffff00;
   list-style-type: none;
   padding: 5px;
 }
+
+.btn-sign {
+  margin-top: 10px;
+}
+/* main */
+
+main {
+  background-color: #4dffe1;
+  padding: 0 50px;
+}
+
+
+h2 {
+  color: #ffffff;
+}
+
+.main-container {
+  background-color: #ffffff;
+  padding: 20px;
+  margin-bottom: 10px;
+}
+
+.tweet-list-item {
+  display: inline-block;
+  txt-align: center;
+}
+
+li {
+  list-style-type: none;
+}
+
+.btn{
+margin-top: 10px;
+background: #ffffff;
+border: 1px solid #4dffe1;
+}
+
+/* footer */
 
 footer {
    width: 100%;

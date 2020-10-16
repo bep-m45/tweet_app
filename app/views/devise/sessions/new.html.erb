@@ -1,18 +1,21 @@
 <main>
-<h2>Log In</h2>
-
+<h2><i class="fas fa-sign-in-alt"></i>Log In</h2>
+<div class="main-container">
 <%= form_with model:@user, url: session_path(resource_name), local: true do |f| %>
   <div class="field">
+    <label>Name</label>
     <label class="control-label sr-only" for="inputName">Name</label><br />
     <%= f.text_field :name, autofocus: true, class:"form-control", id:"inputName" %>
   </div>
 
   <div class="field">
+    <label>Password</label>
     <label class="control-label sr-only" for="inputPassword">Password</label><br />
     <%= f.password_field :password, autocomplete: "off", class:"form-control", id:"inputPassword" %>
   </div>
-
-    <%= f.submit "Log in" %>
+  <div class="btn-sign">
+    <button type="submit" class="btn btn-info">Log in</button>
   </div>
 <% end %>
+</div>
 </main>
